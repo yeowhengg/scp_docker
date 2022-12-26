@@ -73,10 +73,10 @@ class Main:
             ssh.load_system_host_keys()
             ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-            ssh.connect('ip add', username='uname', password='pw')
+            ssh.connect('ip add', username='#', password='#')
 
             with SCPClient(ssh.get_transport()) as scp:
-                scp.put('cookies.json', recursive=True, remote_path='C:/Users/#/#')
+                scp.put('cookies.json', recursive=True, remote_path='C:/Users/#')
             print('Cookies files sent!')
         except Exception as e:
             print(e)
@@ -91,9 +91,11 @@ def start_main(main_class: Main):
         main_class.initial_login()
     
     # tomororw = datetime.date.today() + datetime.timedelta(days=1)
-    later = datetime.date.today() + datetime.timedelta(hours=1)
+    
     now = datetime.datetime.now(pytz.timezone('Asia/Singapore'))
-    print(f'Going to sleep. Next job scheduled at: {later} : {now.strftime("%H:%M")}')
+    later = now + datetime.timedelta(hours=1)
+    
+    print(f'Going to sleep. Next job scheduled at: {now} : {later.strftime("%H:%M")}')
 
 count = 0
 while True:
