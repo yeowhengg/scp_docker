@@ -29,7 +29,7 @@ class Main:
         chrome_options.add_argument("start-maximized")
         chrome_options.add_argument("--disable-notifications")
         chrome_options.add_argument("--user-data-dir=tmp/MainProfile")
-        chrome_options.add_argument("--profile-directory=UuzuProfile")
+        chrome_options.add_argument("--profile-directory=#")
         chrome_options.add_argument(
             "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
         )
@@ -82,10 +82,10 @@ class Main:
             ssh.load_system_host_keys()
             ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-            ssh.connect('218.212.161.24', username='yeowheng', password='BlaaCKed123')
+            ssh.connect('ip add', username='#', password='#')
 
             with SCPClient(ssh.get_transport()) as scp:
-                scp.put('cookies.json', recursive=True, remote_path='C:/Users/yeowheng/Desktop/Work/varys-backend/weibo-web-crawler')
+                scp.put('cookies.json', recursive=True, remote_path='C:/Users/#')
             print('Cookies files sent!')
         except Exception as e:
             print(e)

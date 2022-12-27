@@ -1,3 +1,3 @@
-extract_cookie/cookies.json
-extract_cookie/selenium_volume/chrome_profile/Cache
-extract_cookie/selenium_volume/chrome_profile/Cache/Cache_Data
+.selenium_volume
+extract_cookie/selenium_volume/
+.cookies.json
